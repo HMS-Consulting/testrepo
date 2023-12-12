@@ -1,0 +1,29 @@
+# To get started with Dependabot version updates, you'll need to specify which
+# package ecosystems to update and where the package manifests are located.
+# Please see the documentation for all configuration options:
+# https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-updates
+
+version: 2
+registries:
+  nuget-azure-devops:
+    type: nuget-feed
+    url: https://pkgs.dev.azure.com/HMSRPA/Public.Feeds/_packaging/HMS_RPA/nuget/v3/index.json
+    
+  nuget-public:
+    type: nuget-feed
+    url: https://api.nuget.org/v3/index.json
+    
+  UiPathMarketplace:
+    type: nuget-feed
+    url: https://gallery.uipath.com/api/v3/index.json
+    
+  UiPathOfficial:
+    type: nuget-feed
+    url: https://pkgs.dev.azure.com/uipath/Public.Feeds/_packaging/UiPath-Official/nuget/v3/index.json
+updates:
+- package-ecosystem: nuget
+  directory: "/"
+  registries: "*"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 25
